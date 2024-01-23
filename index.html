@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class="alert-box" id="alert">
+        알림창임
+        <button onclick="stlyeShow('none')">닫기</button>
+    </div>
+    <button onclick="stlyeShow('block')">버튼</button>
+
+
+    <script>
+        //함수 하나를 가지고 여러가지 코드를 실행할때 파라미터(인자)사용한다.
+        function stlyeShow(구멍){
+            document.getElementById('alert').style.display = 구멍;
+        }
+
+    function plus(first, second){
+        first + second
+    }        
+
+    
+
+
+
+    </script>
+
+</body>
+</html>
