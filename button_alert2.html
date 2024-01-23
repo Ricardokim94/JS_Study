@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    
+    <div class="alert-box" id="alert">
+        <p id="title"> 알림창 입니다..</p>
+        <button onclick="closeAlert()">Close</button>
+    </div>
+    
+    <button onclick="alert_Total('id')">button1</button>
+    <button onclick="alert_Total('pw')">button2</button>
+    
+    <script>
+//버튼 1 누르면 아이디입력하세요 띄우기
+//버튼 2 누르면 비밀번호 입력학세요. 나오게 코드 작성
+// + 창 닫기 버튼 만들기  
+
+        // function alert_Total(id,pw){
+        //     document.getElementById('title').innerHTML = '비밀번호 입력하세요.';
+        //     document.getElementById('alert').style.display = 'block';
+        // }
+
+        function alert_Total(type) {
+        var titleText = (type === 'id') ? '아이디 입력하세요.' : '비밀번호 입력하세요.';
+        document.getElementById('title').innerHTML = titleText;
+        document.getElementById('alert').style.display = 'block';
+    }
+
+
+        //창 닫기
+        function closeAlert(){
+            document.getElementById('alert').style.display = 'none';
+        }
+    </script>
+
+
+</body>
+</html>
