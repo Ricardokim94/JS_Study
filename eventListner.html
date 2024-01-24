@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    
+    <div class="alert-box" id="alert">
+        <p id="title"> 알림창 입니다..</p>
+        <button id="close">Close</button>
+    </div>
+    
+    <button onclick="alert_id('block')">button1</button>
+    <button onclick="alert_pw('block')">button2</button>
+    
+    <script>
+        //  //창 닫기
+        //  function closeAlert(){
+        //     document.getElementById('alert').style.display = 'none';
+        // }
+
+        //...addEventListner() 사용하면 onclick 필요없음
+        document.getElementById('close').addEventListener('click', function(){
+            document.getElementById('alert').style.display = 'none';
+        });
+
+
+
+
+
+        
+
+        //버튼 1 아이디 입력 띄우기
+        function alert_id(){
+            document.getElementById('title').innerHTML = '아이디를 입력하세요.';
+            document.getElementById('alert').style.display = 'block';
+        }
+
+        //버튼 2 비밀번호 입력 띄우기
+        function alert_pw(){
+            document.getElementById('title').innerHTML = '비밀번호 입력하세요.';
+            document.getElementById('alert').style.display = 'block';
+        }
+
+       
+    </script>
+
+
+</body>
+</html>
