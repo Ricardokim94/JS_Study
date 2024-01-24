@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>369Game</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <form id="369Form">
+        <div>
+            <input type="text" id="number">
+        </div>
+        <button type="submit" class="btn-number">결과</button>
+        
+    </form>
+
+    <script>
+        
+        $('#369Form').submit(function(e){
+            e.preventDefault(); // 폼 전송 막기
+
+            var number = $('#number').val();
+            if (number % 3 === 0 && number !== 0){
+                alert('박수!');
+            }else{
+                alert('넘어가세요');
+            }
+        })
+    </script>
+
+
+</body>
+</html>
