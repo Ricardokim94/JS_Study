@@ -42,4 +42,8 @@
     /* transition:  all 1s; */
 }
 
+.main-bg{
+    padding: 100px 20px;
+    background: lightgray;
+}
 

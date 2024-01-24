@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <div class="black-bg">
+        <div class="white-bg">
+            <h4>로그인하세요</h4>
+            <!-- form사용하는 이유 : 서버로 전송하려고 쓰는 것임 
+                form action='url~~~' 쓰면 서버url로 보낸다.-->
+            <form action="formServer_Test.html" id="loginForm">
+                <div class="my-3">
+                    <input type="text" class="form-control" id="username" name="username">
+                </div>
+                <div class="my-3">
+                    <input type="password" class="form-control" id="password" name="password">
+                </div>
+                <button type="submit" class="btn btn-primary">전송</button>
+                <button type="button" class="btn btn-danger" id="close">닫기</button>
+            </form>
+        </div>
+    </div>
+
+
+    <div class="main-bg">
+        <h4>Shirts on Sale</h4>
+        <button id="login" class="btn btn-danger">로그인</button>
+    </div>
+
+
+    <script>
+        //전송버튼 부르면 input에 입력한 값이 없으면 '값을 입력하시오'라는 alert창 띄우기
+        // + 비번 6자리 이하면 alert창 띄우기
+        $('#loginForm').submit(function (event) {
+            // 폼 전송 이벤트 발생 시 실행되는 함수
+            var username = $('#username').val(); //val = 입력한 값
+            var password = $('#password').val();
+
+            // 간단한 유효성 검사 - 입력된 값이 없을 경우 알림창 띄우기
+            if (!username) {
+                alert('아이디를 입력하세요');
+                event.preventDefault(); // 폼 전송 막기
+            }else if(!password){
+                alert('비번을 입력하세요');
+                event.preventDefault(); // 폼 전송 막기
+            }else if(password.length < 6){
+                alert('비번은 6자리 이상으로~');
+                event.preventDefault(); // 폼 전송 막기
+            }
+            else{
+                $('.loginForm'),submit();
+            }
+        });
+
+
+
+        $('#login').on('click', function () {
+            $('.black-bg').addClass('show-modal').fadeIn(); // 모달 나타내기
+        });
+
+
+        $('#close').on('click', function () {
+            $('.black-bg').fadeOut(function () {
+                $(this).removeClass('show-modal'); // 모달 숨기고 show-modal 클래스 제거
+            });
+        });
+
+        
+
+
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>
