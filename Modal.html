@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+
+    <div class="black-bg">
+        <div class="white-bg">
+            <h4>로그인하세요</h4>
+            <button class="btn btn-danger" id="close">닫기</button>
+        </div>
+    </div>
+
+    <!--로그인 버튼 누르면 show-modal Class를 black-bg에 붙여주셈 -->
+    <button id="login">로그인</button>
+
+
+    <script>
+        //JS로 로그인 버튼 누르면 실행되는 코드 구현
+        // document.getElementById('login').addEventListener('click', function(){ })
+
+        //Jquery로 로그인 버튼 누르면 실행되는 코드 구현
+        $('#login').on('click', function () {
+            $('.black-bg').addClass('show-modal').fadeIn(); // 모달 나타내기
+        });
+
+
+        $('#close').on('click', function () {
+            $('.black-bg').fadeOut(function () {
+                $(this).removeClass('show-modal'); // 모달 숨기고 show-modal 클래스 제거
+            });
+        });
+    </script>
+
+
+
+</body>
+
+</html>

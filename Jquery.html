@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script
+    src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+    crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <p class="hello">Hello</p>
+    <p class="hello">Hello</p>
+    <p class="hello">Hello</p>
+    <button id="test-btn">button</button>
+    <script>
+    //JS
+        document.querySelector('.hello').innerHTML = '안녕';
+    //Jquery
+        $('.hello').html('안녕???'); //글 바꿔주는 것
+        $('.hello').css('color', 'red'); //스타일 바꾸는것
+        $('.hello').addClass('show')  //클래스 탈부착
+        $('.hello').html('바보야'); //Jquery는 다바꿔준다.
+
+        $('#test-btn').on('click', function(){ //Jquery는 on을 쓴다.
+            $('.hello').slideUp()  //위로 올라가면서 사라지게 하는 것
+        })
+
+    </script>
+
+
+
+
+   
+    
+</body>
+</html>
