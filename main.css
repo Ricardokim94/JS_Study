@@ -47,3 +47,7 @@
     background: lightgray;
 }
 
+.dark{
+    background: black;
+    color: white;
+}
