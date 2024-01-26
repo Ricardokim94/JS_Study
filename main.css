@@ -55,3 +55,9 @@
     background: white;
     color: black;
 }
+
+.alert-danger{
+    padding: 5px;
+    background: purple;
+    color: white;
+}
