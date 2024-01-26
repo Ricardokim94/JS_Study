@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script
+    src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+    crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="main.css">
 </head>
 <body>
     <!-- Q1 -->
@@ -16,7 +21,23 @@
     첫 예금액이 5만원 이상이면 이율이 연 20퍼센트라고 합니다.
     그래서 민준이는 (1) 변수에 예금액을 넣으면 (2) 2년 후의 총 예금액을 자동으로 콘솔창에 출력해주는 기능을 자바스크립트로 만들려고하는데
     어떻게 코드를 짜면 될까요?  -->
+
+    <!-- Q3 -->
+    <!-- 방금 마신 커피의 3분의 2만큼 총 2번 리필해주는 카페가 있습니다.
+    예를 들면 처음 커피를 90ml 주문하면 첫 리필은 60ml를 해주며, 그 다음 리필은 40ml를 해주는 카페입니다.
+    그럼 처음 주문한 커피 양에 따라서 최대한 마실 수 있는 커피를 콘솔창에 계산해주는 코드를 작성해봅시다.  -->
+
+    <!-- Q4 -->
+    <p>태조 이성계가 태어난 년도는?</p>
+    <input type="text" id="answer">년
+    <button id="send-answer">제출</button>
+    <!-- 정답 : 1335 script기능 만들기-->
+    <!-- 유저가 <input>에 답을 적고 제출버튼을 누를 수 있는 퀴즈 UI 입니다.
+    1. 유저가 답을 맞추면 alert('성공');
+    2. 유저가 답을 3번 찍어서 못맞추면 alert('멍청아') 를 띄워봅시다. -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
+
     //Q1)    
         let age;
         const hometown='';
@@ -31,6 +52,36 @@
     }
     console.log('미래금액 : ', 미래금액++);
 
+    //Q3
+    var refill = 100;
+    var maxRefill = result * 2/3;
+    var result;
+    
+    if(refill){
+        //첫번째 refill 받음
+        result = refill * 2/3;
+        //두번째 refill 받음
+        maxRefill = result *2/3;
+        console.log('refill : ',result);
+        console.log('maxRefill',maxRefill);
+    }else{
+        console.log("No refill more, sorry");
+    }
+
+
+    //Q4
+    //다 맞게했는데 내가 한 실수 = val()를 빼먹었다. logic은 맞게 했으나 
+    //val()을 사용해서 값을 불러오는것을 인지 하지 못했다.
+    $('#send-answer').on('click', function(){
+        var answer = $('#answer').val();
+        
+        if(answer === '1355'){
+            alert("정답입니다.")
+        }else{
+            alert("오답입니다.")
+        }
+    });
+    
 
     </script>
     
