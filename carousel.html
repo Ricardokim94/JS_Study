@@ -25,7 +25,7 @@
             </div>       
         </div>
     </div>
-
+    <button class="before">이전</button>
     <button class="slide-1">1</button>
     <button class="slide-2">2</button>
     <button class="slide-3">3</button>
@@ -54,6 +54,11 @@
 
          $('.next').on('click', function() {
             currentIndex = (currentIndex + 1) % totalImages;
+            var translateValue = currentIndex * -100; // 이미지 박스의 너비에 따라 변환 값 조정
+            $('.slide-container').css('transform', 'translateX(' + translateValue + 'vw)');
+        });
+        $('.before').on('click', function() {
+            currentIndex = (currentIndex - 1 + totalImages) % totalImages;
             var translateValue = currentIndex * -100; // 이미지 박스의 너비에 따라 변환 값 조정
             $('.slide-container').css('transform', 'translateX(' + translateValue + 'vw)');
         });
