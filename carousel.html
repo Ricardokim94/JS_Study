@@ -15,7 +15,7 @@
     <div style="overflow: hidden">
         <div class="slide-container">
             <div class="slide-box">
-                <img src="car1.png">
+                <img src="car1.png" id="carImage">
             </div>
             <div class="slide-box">
                 <img src="car2.png">
@@ -29,7 +29,7 @@
     <button class="slide-1">1</button>
     <button class="slide-2">2</button>
     <button class="slide-3">3</button>
-    <button class="slide-4">다음</button>
+    <button class="next">다음</button>
 
 
     <script>
@@ -44,6 +44,19 @@
         $('.slide-3').on('click', function(){
             $('.slide-container').css('transform', 'translateX(-200vw)');
         })
+
+
+        //다음버튼 누르면 동작
+            //지금 보이는 사진이 1이면 2번 보여주세요. 이런식으로 if문 접근
+        //chat 도움받아서 한것
+         var currentIndex = 0;
+         var totalImages = $('.slide-box').length;
+
+         $('.next').on('click', function() {
+            currentIndex = (currentIndex + 1) % totalImages;
+            var translateValue = currentIndex * -100; // 이미지 박스의 너비에 따라 변환 값 조정
+            $('.slide-container').css('transform', 'translateX(' + translateValue + 'vw)');
+        });
     </script>
 
 
