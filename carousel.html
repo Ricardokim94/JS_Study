@@ -29,6 +29,31 @@
     <button class="slide-1">1</button>
     <button class="slide-2">2</button>
     <button class="slide-3">3</button>
+    <button class="slide-4">다음</button>
+
+
+    <script>
+        //2번 버튼 클릭시 css에 "transform: translateX(-100vw);" 이거 실행 시키는 코드
+        //3번 버튼 클릭시 css에 "transform: translateX(-200vw);" 이거 실행 시키는 코드
+        $('.slide-1').on('click', function(){
+            $('.slide-container').css('transform', 'translateX(0vw)');
+        })
+        $('.slide-2').on('click', function(){
+            $('.slide-container').css('transform', 'translateX(-100vw)');
+        })
+        $('.slide-3').on('click', function(){
+            $('.slide-container').css('transform', 'translateX(-200vw)');
+        })
+    </script>
+
+
+
+
+
+
+
+
+
 
 </body>
 </html>

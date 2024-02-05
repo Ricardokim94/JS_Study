@@ -64,6 +64,10 @@
 
 .slide-container{
     width: 300vw;
+     /* margin-left: -100vw;이거 넣으면 최종화면임 -100:2번째 사진 / -200:3번째 사진*/
+      transition: all 1s;
+     /*transform: translateX(-100vw);  /* 위에margin이랑 똑같은 기능을 하는 왼쪽으로 이동시키는 최종화면임
+      */
 }
 .slide-box{
     width: 100vw;
