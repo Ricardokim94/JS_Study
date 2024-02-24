@@ -16,8 +16,9 @@ nav.navbar.navbar-light.custom-navbar {
 .list-group {
     display : none;
   }
-  .show {
+.show {
     display : block;
+    margin: 20px;
   }
 
 /* dark light 제어 */
@@ -84,7 +85,8 @@ position: absolute;
     display: flex; /* 부모 요소를 플렉스 박스로 설정하여 내부 요소를 가로로 정렬 */
     justify-content: center; /* 내부 요소를 가로로 가운데 정렬 */
     align-items: center; /* 내부 요소를 세로로 가운데 정렬 */
-    width: 100%;
+    margin-left: 5%;
+    width: 90%;
     height: auto; /* 이미지의 높이를 자동으로 조정하여 가로세로 비율 유지 */
     max-height: 80vh; /* 이미지의 최대 높이를 화면 높이의 80%로 제한 */
     border-radius: 30px;
