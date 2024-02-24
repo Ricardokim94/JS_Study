@@ -1,0 +1,91 @@
+.alert-box{
+    background-color: aqua;
+    color: white;
+    padding: 5px;
+    display: none;
+}
+
+/* 맨위 bar css */
+nav.navbar.navbar-light.custom-navbar {
+    background-color: rgb(134, 174, 175) !important;
+    border-radius: 10px;
+    margin: 20px;
+}
+
+/* navbar List */
+.list-group {
+    display : none;
+  }
+  .show {
+    display : block;
+  }
+
+/* dark light 제어 */
+.bg-dark {
+position: absolute;
+    right: 80px;
+}
+
+.black-bg {
+    width : 100%;
+    height : 100%;
+    position : fixed;
+    background : rgba(0,0,0,0.5);
+    z-index : 5;
+    padding: 30px;
+    visibility: hidden;
+    opacity: 0;
+    /* transition:  all 1s; */
+}
+.white-bg {
+    background: white;
+    border-radius: 5px; 
+    padding: 30px;
+} 
+
+.show-modal{
+    visibility: visible;
+    opacity: 1;
+    /* transition:  all 1s; */
+}
+
+.main-bg{
+    padding: 100px 20px;
+    background: lightgray;
+}
+
+.dark{
+    background: rgb(22, 21, 21);
+    color: white;
+}
+.white{
+    background: white;
+    color: black;
+}
+
+.alert-danger{
+    padding: 5px;
+    background: purple;
+    color: white;
+}
+
+.slide-container{
+    width: 300vw;
+     /* margin-left: -100vw;이거 넣으면 최종화면임 -100:2번째 사진 / -200:3번째 사진*/
+      transition: all 1s;
+     /*transform: translateX(-100vw);  /* 위에margin이랑 똑같은 기능을 하는 왼쪽으로 이동시키는 최종화면임
+      */
+}
+.slide-box{
+    width: 100vw;
+    float: left;
+}
+.slide-box img {
+    display: flex; /* 부모 요소를 플렉스 박스로 설정하여 내부 요소를 가로로 정렬 */
+    justify-content: center; /* 내부 요소를 가로로 가운데 정렬 */
+    align-items: center; /* 내부 요소를 세로로 가운데 정렬 */
+    width: 100%;
+    height: auto; /* 이미지의 높이를 자동으로 조정하여 가로세로 비율 유지 */
+    max-height: 80vh; /* 이미지의 최대 높이를 화면 높이의 80%로 제한 */
+    border-radius: 30px;
+}
