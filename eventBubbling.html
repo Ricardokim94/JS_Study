@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <div class="black-bg">
+        <div class="white-bg">
+            <h4>로그인하세요</h4>
+            <!-- form사용하는 이유 : 서버로 전송하려고 쓰는 것임 
+                form action='url~~~' 쓰면 서버url로 보낸다.-->
+            <form action="formServer_Test.html" id="loginForm">
+                <div class="my-3">
+                    <input type="text" class="form-control" id="username" name="username">
+                </div>
+                <div class="my-3">
+                    <input type="password" class="form-control" id="password" name="password">
+                </div>
+                <button type="submit" class="btn btn-primary">전송</button>
+                <button type="button" class="btn btn-danger" id="close">닫기</button>
+            </form>
+        </div>
+    </div>
+
+
+    <div class="main-bg">
+        <h4>Shirts on Sale</h4>
+        <button id="login" class="btn btn-danger">로그인</button>
+    </div>
+
+
+    <script>
+         $('#login').on('click', function () {
+            $('.black-bg').addClass('show-modal').fadeIn(); // 모달 나타내기
+        });
+
+
+        $('#close').on('click', function () {
+            $('.black-bg').fadeOut(function () {
+                $(this).removeClass('show-modal'); // 모달 숨기고 show-modal 클래스 제거
+            });
+        });
+
+        
+        document.querySelector('.black-bg').addEventListener('click',function(e){
+            // e.target; //유저가 실제 누른거
+            // e.currentTarget; //이벤트 리스너 달린 곳
+            // e.preventDefault(); //실행안되게 해주세요
+            // e.stopPropagation(); //내 상위요소로 이벤트 버블링 막아주세요.
+
+            if(e.target == document.querySelector('.black-bg')){
+                document.querySelector('.black-bg').classList.remove('show-modal');
+            }
+        });
+    </script>
+
+
+</body>
+
+</html>
