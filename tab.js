@@ -38,7 +38,7 @@
 //     });
 // }
 
-// //파라미터 num을 넣어야 된다!!! 조심!!!
+//파라미터 num을 넣어야 된다!!! 조심!!!
 // function TapOpen(num){
 //     $('.tab-button').removeClass('orange'); 
 //     $('.tab-button').eq(num).addClass('orange'); 
@@ -52,11 +52,39 @@
 //이벤트리스너 한번 사용할때마다 램 용량을 차지하기 때문에 줄이는 게 성능면으로 낫다.
 
 //램 절약을 위해 이런식으로 list에 이벤트 버블링을 이용한다.
+// $('.list').click(function(e){
+// //ex)지금 누른게 버튼 0이면 TapOpen()
+//     if(e.target == document.querySelectorAll('.tab-button')[0]){
+//         TapOpen(0);
+//     }
+//     if(e.target == document.querySelectorAll('.tab-button')[1]){
+//         TapOpen(1);
+//     }
+//     if(e.target == document.querySelectorAll('.tab-button')[2]){
+//         TapOpen(2);
+//     }
+// })
+
+
+// function TapOpen(num){
+//     $('.tab-button').removeClass('orange'); 
+//     $('.tab-button').eq(num).addClass('orange'); 
+//     $('.tab-content').removeClass('show'); 
+//     $('.tab-content').eq(num).addClass('show'); 
+// }
+
+//########################################################################
+
+
+//data-id값을 받아와 값을 나타내는 방법
 $('.list').click(function(e){
-//ex)지금 누른게 버튼 0이면 TapOpen()
-    if(e.target == document.querySelectorAll('.tab-button')[0]){
-        TapOpen(0);
-    }
+    console.log("Test : ",e.target.dataset.id);
+        TapOpen(e.target.dataset.id);
+    })
 
-})
-
+function TapOpen(num){
+    $('.tab-button').removeClass('orange'); 
+    $('.tab-button').eq(num).addClass('orange'); 
+    $('.tab-content').removeClass('show'); 
+    $('.tab-content').eq(num).addClass('show'); 
+}
