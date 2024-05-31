@@ -49,24 +49,32 @@
             { id: 2, price: 60000, title: 'Black Monastery' }
         ];
 
-        var cardBodies = document.querySelectorAll('.card-body');
+       </script>
 
-        cardBodies.forEach(function (cardBody, index) {
-            cardBody.querySelector('h5').innerHTML = products[index].title;
-            cardBody.querySelector('p').innerHTML = products[index].price + " won";
-        });
-        var a = 'Hello';
-        `문자${a}문자`
 
-        // document.querySelectorAll('.card-body h5')[0].innerHTML = products[0].title;
-        // document.querySelectorAll('.card-body p')[0].innerHTML = products[0].price + " won";
+    <!-- ajax 서버 요청 -->
+    <script>
 
-        // document.querySelectorAll('.card-body h5')[1].innerHTML = products[1].title;
-        // document.querySelectorAll('.card-body p')[1].innerHTML = products[1].price + " won";
+        $.get('https://codingapple1.github.io/price.json')
+            .done(function (data) {
+                console.log(data.price)
+            })
+            .fail(function () {
+                console.log('fail 입니다.')
+            })
+        
+        fetch('https://codingapple1.github.io/price.json')
+            .then(res => res.json()) // JSON을 object로 바꿔주는 기능
+            .then(function (data) {
+                console.log(data)
+            })
+            .catch(function (error) {
+                console.log('실패함')
+            });
 
-        // document.querySelectorAll('.card-body h5')[2].innerHTML = products[2].title;
-        // document.querySelectorAll('.card-body p')[2].innerHTML = products[2].price + " won";
     </script>
+
+
 
 
 
