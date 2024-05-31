@@ -57,9 +57,14 @@
     .show {
       display: block;
     }
+
+    /* select문 미리 숨겨놓기 */
+    .form-hide {
+      display: none;
+    }
   </style>
 
-<!-- 변수에 담아보기 -->
+  <!-- 변수에 담아보기 -->
   <div class="container mt-3">
     <div class="card p-3">
       <span class="car-title">상품</span>
@@ -68,13 +73,13 @@
   </div>
 
   <script>
-      
-      var car = ['소나타', 50000, 'white']; //Array
-      var car2 = {name : '소나타', price : 60000} //Object
-      
-      //저위에 상품 / 가격에 car2담아 보기
-      document.querySelector('.car-title').innerHTML = "상품 : " + car2.name;
-      document.querySelector('.car-price').innerHTML = "가격 : " + car2.price;
+
+    var car = ['소나타', 50000, 'white']; //Array
+    var car2 = { name: '소나타', price: 60000 } //Object
+
+    //저위에 상품 / 가격에 car2담아 보기
+    document.querySelector('.car-title').innerHTML = "상품 : " + car2.name;
+    document.querySelector('.car-price').innerHTML = "가격 : " + car2.price;
 
   </script>
 
@@ -99,8 +104,38 @@
 
   <script src="tab.js"></script>
 
+  <!-- select문  -->
+  <form class="container my-5 form-group">
+    <p>상품선택</p>
+    <select class="form-select mt-2">
+      <option>모자</option>
+      <option>셔츠</option>
+    </select>
+    <!--평상시 안보였다가 shirt 셔츠 선택하면 만들어 지는 select문  -->
+    <select class="form-select mt-2 form-hide">
+      <option>95</option>
+      <option>100</option>
+      <option>105</option>
+    </select>
+  </form>
 
 
+  <script>
+    //유저가 셔츠를 골랐을 때 form-hide 떼어주세요.구현 
+    //* evenetLisener 로 해야됨 / script는 페이지 실행시 1번만 됨.
+    //<input>값 변경할 때 input 이벤트 발동.
+    $('.form-select').eq(0).on('input', function (e) {
+      var userSelect = e.currentTarget.value; // 유저가 선택한게
+      if (userSelect == '셔츠') {
+        $('.form-select').eq(1).removeClass('form-hide'); // .form-hide 클래스를 제거
+      } else if (userSelect == '모자') {
+        $('.form-select').eq(1).addClass('form-hide'); // .form-hide 클래스를 추가
+      }
+    });
+
+
+
+  </script>
 
   <!-- boostrap Install src -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
