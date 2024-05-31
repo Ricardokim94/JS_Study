@@ -9,3 +9,6 @@
 - 다크 모드 - 버튼으로 화면전환 제어해보기
 - Interval, SetTimeout 등 몇초후 text 감소 및 생성 삭제 해보기
 - carousel 구현
+- 이벤트 버블링
+- data 바인딩
+- Ajax 이용하여 서버와 통신하기
