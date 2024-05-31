@@ -110,6 +110,7 @@
     <select class="form-select mt-2">
       <option>모자</option>
       <option>셔츠</option>
+      <option>바지</option>
     </select>
     <!--평상시 안보였다가 shirt 셔츠 선택하면 만들어 지는 select문  -->
     <select class="form-select mt-2 form-hide">
@@ -124,14 +125,26 @@
     //유저가 셔츠를 골랐을 때 form-hide 떼어주세요.구현 
     //* evenetLisener 로 해야됨 / script는 페이지 실행시 1번만 됨.
     //<input>값 변경할 때 input 이벤트 발동.
-    $('.form-select').eq(0).on('input', function (e) {
-      var userSelect = e.currentTarget.value; // 유저가 선택한게
+    $('.form-select').eq(0).on('input', function () {
+      var userSelect = this.value; // 유저가 선택한 값
       if (userSelect == '셔츠') {
         $('.form-select').eq(1).removeClass('form-hide'); // .form-hide 클래스를 제거
+        $('.form-select').eq(1).html(''); // 기존 옵션 제거
+        var Template = `<option>95</option>
+                      <option>100</option>
+                      <option>105</option>`; // 셔츠 옵션 추가
+        $('.form-select').eq(1).append(Template);
       } else if (userSelect == '모자') {
         $('.form-select').eq(1).addClass('form-hide'); // .form-hide 클래스를 추가
+      } else if (userSelect == '바지') {
+        $('.form-select').eq(1).removeClass('form-hide'); // .form-hide 클래스를 제거
+        $('.form-select').eq(1).html(''); // 기존 옵션 제거
+        var Template = `<option>28</option>
+                      <option>30</option>`; // 바지 옵션 추가
+        $('.form-select').eq(1).append(Template);
       }
     });
+
 
 
 
