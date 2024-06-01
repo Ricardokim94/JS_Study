@@ -37,7 +37,9 @@
             { id: 1, price: 50000, title: 'Springfield Shirt' },
             { id: 2, price: 60000, title: 'Black Monastery' }
         ];
-        //JS로 html 만들어 보기
+    //JS로 html 만들어 보기
+        //가격 순으로 정렬
+        products.sort((a,b)=>a.price - b.price);
 
         products.forEach((data, i) => {
             var Template =
@@ -48,17 +50,17 @@
             </div>`;
             $('.row').append(Template);
         });
-
-
-
     </script>
 
 
-    <!-- 더보기 버튼 및 데이터 가져오기 -->
+
+<!-- 더보기 버튼 및 데이터 가져오기 -->
     <div class="container" id="more">
         <button class="btn btn-danger"> more </button>
     </div>
     <script>
+        //가격 순으로 정렬
+        products.sort((a,b)=>a.price - b.price);
 
         $('#more').click(function () {
             $.get('https://codingapple1.github.io/js/more1.json')

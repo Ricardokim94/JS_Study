@@ -1,0 +1,9 @@
+#가격 순으로 Array 정렬하기   
+    var array = [7,3,5,2,40];
+
+// 숫자정렬 하려면 이렇게 써야 됨. 
+    array.sort(function(a,b){
+        return a - b
+    });
+
+#fillter() - 원본을 건들이지 않음. 변수에 담아서 사용해야 한다.
