@@ -37,9 +37,9 @@
             { id: 1, price: 50000, title: 'Springfield Shirt' },
             { id: 2, price: 60000, title: 'Black Monastery' }
         ];
-    //JS로 html 만들어 보기
+
         //가격 순으로 정렬
-        products.sort((a,b)=>a.price - b.price);
+        products.sort((a, b) => a.price - b.price);
 
         products.forEach((data, i) => {
             var Template =
@@ -47,38 +47,67 @@
                 <img src="https://via.placeholder.com/600" class="w-100">
                 <h5>${data.title}</h5>
                 <p>가격 : ${data.price}</p>
+                <button class="buy"> 구매 </button>
             </div>`;
             $('.row').append(Template);
         });
+
+
+        //localStorage 사용하여 상품 담아보기
+        //1.구매버튼 누르면 2.지금누른버튼 윗윗 글자를 가져와서 3.localStorage에 [글자] 저장
+
+        $('.buy').click(function (e) {
+            var title = $(e.target).siblings('h5').text(); // 형제 요소 선택 (제목임)
+
+            // 만약에 이미 cart라는 항목이 있으면 수정하기 / 근데 그게 아니면 밑에 else 코드 실행 
+            var cart = localStorage.getItem('cart');
+            if (cart != null) {
+                var getItems = JSON.parse(cart); // localStorage에서 cart 항목 가져오기
+                if (Array.isArray(getItems)) {
+                    // 기존 장바구니에 새로운 항목 추가
+                    getItems.push(title);
+                } else {
+                    // 만약 getItems가 배열이 아니면, 새로운 배열을 만들어 title을 추가
+                    getItems = [title];
+                }
+                localStorage.setItem('cart', JSON.stringify(getItems));
+            } else {
+                // cart라는 항목이 없을 경우, 새로운 배열로 title을 추가하여 저장
+                localStorage.setItem('cart', JSON.stringify([title]));
+            }
+
+        });
+
+
     </script>
 
 
 
-<!-- 더보기 버튼 및 데이터 가져오기 -->
+    <!-- 더보기 버튼 및 데이터 가져오기 -->
     <div class="container" id="more">
         <button class="btn btn-danger"> more </button>
     </div>
     <script>
         //가격 순으로 정렬
-        products.sort((a,b)=>a.price - b.price);
+        products.sort((a, b) => a.price - b.price);
 
         $('#more').click(function () {
             $.get('https://codingapple1.github.io/js/more1.json')
-            .done((data,i) => {
-                console.log(data)
-                //성공시 템플릿 보여달라
-                data.forEach((a,i)=>{
-                    var Template =
-                        `<div class="col-sm-4">
+                .done((data, i) => {
+                    console.log(data)
+                    //성공시 템플릿 보여달라
+                    data.forEach((a, i) => {
+                        var Template =
+                            `<div class="col-sm-4">
                             <img src="https://via.placeholder.com/600" class="w-100">
                             <h5>${a.title}</h5>
                             <p>가격 : ${a.price}</p>
                         </div>`;
-                    $('.row').append(Template);
-                })
+                        $('.row').append(Template);
+                    })
 
-            })
-            .fail('실패함')
+                })
+                .fail('실패함')
         })
 
     </script>
