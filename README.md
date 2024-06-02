@@ -14,3 +14,4 @@
 - Ajax 이용하여 서버와 통신하기
 - localStorage 사용
 - Position sticky 사용하여 Apple Page처럼 이미지 구현해 보기
+- opacity scroll event줘서 Apple_Music page 처럼 구현
