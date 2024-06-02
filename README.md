@@ -15,3 +15,6 @@
 - localStorage 사용
 - Position sticky 사용하여 Apple Page처럼 이미지 구현해 보기
 - opacity scroll event줘서 Apple_Music page 처럼 구현
+
+예시)
+![스크린샷 2024-06-02 오후 6 11 06](https://github.com/Ricardokim94/JS_Study/assets/103867288/e0644f23-bd1b-47d8-a435-21fef3d01dda)
