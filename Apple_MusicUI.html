@@ -23,10 +23,11 @@
             margin: auto;
             max-width: 80%;
         }
-        .card-box{
+        .card-box {
             position: sticky;
-            top : 400px;
+            top: 400px;
             margin-top: 200px;
+            transition: opacity 0.5s ease-in-out; /* 부드러운 전환을 위해 추가 */
         }
     </style>
 
@@ -47,6 +48,31 @@
         </div>
     </div>
 
+    <script>
+        $(window).scroll(function () {
+            var height = $(window).scrollTop();
+            console.log('height : ', height);
+    
+            // height 650 - 1150 까지 스크롤바를 내리면, 첫번째 카드의 opacity 1-0으로 서서히 변경.
+            var opacityValue = (-1 / 500) * (height - 650) + 1; // 650에서 시작하도록 조정
+            // opacity 범위를 0에서 1로 제한
+            if (opacityValue < 0) opacityValue = 0;
+            if (opacityValue > 1) opacityValue = 1;
+    
+            // height 650 - 1150 까지 스크롤바를 내리면, 첫번째 카드의 scale 1-0.5로 서서히 변경.
+            var scaleValue = (-0.7 / 500) * (height - 650) + 1; // 650에서 시작하도록 조정
+            // scale 범위를 0.5에서 1로 제한
+            if (scaleValue < 0.3) scaleValue = 0.3;
+            if (scaleValue > 1) scaleValue = 1;
+    
+            $('.card-box').eq(0).css({
+                'opacity': opacityValue,
+                'transform': 'scale(' + scaleValue + ')'
+            });
+        });
+
+
+    </script>
 
 
 
