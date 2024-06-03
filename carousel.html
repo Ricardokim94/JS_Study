@@ -28,6 +28,7 @@
 
     <script>
         // 사진 스와이프 (드래그 해서 이미지 넘어가는 기능)
+        //chat 도움 받아서 한것 
         var start = 0;
         var isDragging = false; // 드래그 상태를 추적하기 위한 변수
     
@@ -38,7 +39,7 @@
     
         $(document).on('mousemove', function(e) { // 드래그한 좌표
             if (isDragging) { // 드래그 중일 때만 실행
-                var result = e.clientX - start;
+                var result = e.clientX - start; //이동거리임.
                 console.log('result : ', result);
                 $('.slide-container').css('transform', `translateX(${result}px)`);
             }
@@ -46,6 +47,17 @@
     
         $(document).on('mouseup', function(e) { // 드래그 끝
             isDragging = false; // 드래그 종료
+            console.log('re : ', e.clientX - start);
+            //어느 정도 이동 했을 때 사진 넘어가게
+            if(e.clientX - start < - 250){
+                $('.slide-container')
+                .css('transition','all 0.5s') //transition 주는법
+                .css('transform', 'translateX(-100vw)');
+            }else{
+                $('.slide-container')
+                .css('transition','all 0.5s')
+                .css('transform', 'translateX(-0vw)');
+            }
         });
     </script>
     
