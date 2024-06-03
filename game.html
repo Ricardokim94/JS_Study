@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <title>game</title>
+</head>
+<body>
+
+    <h4>물에 빠지면 누구먼저 구할 것임?</h4>
+
+    <button id="wife">와이프</button>
+    <button id="parent">부모님</button>
+    <button id="dog">키우던 개</button>
+
+    <script>
+        function answer(choice){
+            switch(choice){
+                case 'wife': 
+                    alert('와이프를 선택하셨군요.');
+                    break;
+
+                case 'parent' :
+                    alert('부모님을 선택하셨군요.');
+                    break;
+                case 'dog' :
+                    alert('강아지를??.');
+                    break;
+                default :
+                    alert('선택하지 않았습니다.');
+            }
+        }
+
+        //각 버튼 이벤트 리스너 추가
+        $('#wife').click(function(){
+            answer('wife');
+        });
+        $('#parent').click(function(){
+            answer('parent');
+        });
+        $('#dog').click(function(){
+            answer('dog');
+        });
+        
+
+    </script>
+
+
+</body>
+</html>
